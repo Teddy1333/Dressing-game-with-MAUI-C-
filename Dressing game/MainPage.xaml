@@ -19,34 +19,32 @@
             <VerticalStackLayout Spacing="20">
                 <!-- Tops -->
                 <Label Text="Tops" FontSize="16" />
-                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
-                    <Button Text="T-Shirt" Clicked="OnItemClicked" />
-                    <Button Text="Glitter Top" Clicked="OnItemClicked" />
+                <Grid x:Name="TopsGrid" ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto"
+                      RowSpacing="10" ColumnSpacing="10">
+                    <!-- Add spacing between buttons -->
                 </Grid>
 
                 <!-- Bottoms -->
                 <Label Text="Bottoms" FontSize="16" />
-                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
-                    <Button Text="Jeans" Clicked="OnItemClicked" />
-                    <Button Text="Leather Pants" Clicked="OnItemClicked" />
+                <Grid x:Name="BottomsGrid" ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto"
+                      RowSpacing="10" ColumnSpacing="10">
+                    <!-- Add spacing between buttons -->
                 </Grid>
 
                 <!-- Shoes -->
                 <Label Text="Shoes" FontSize="16" />
-                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
-                    <Button Text="Sneakers" Clicked="OnItemClicked" />
-                    <Button Text="High Heels" Clicked="OnItemClicked" />
+                <Grid x:Name="ShoesGrid" ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto"
+                      RowSpacing="10" ColumnSpacing="10">
+                    <!-- Add spacing between buttons -->
                 </Grid>
 
                 <!-- Accessories -->
                 <Label Text="Accessories" FontSize="16" />
-                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
-                    <Button Text="Bracelet" Clicked="OnItemClicked" />
-                    <Button Text="Necklace" Clicked="OnItemClicked" />
+                <Grid x:Name="AccessoriesGrid" ColumnDefinitions="*,*,*,*,*" RowDefinitions="Auto"
+                      RowSpacing="10" ColumnSpacing="10">
+                    <!-- Add spacing between buttons -->
                 </Grid>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
 </ContentPage>
-
-    
