@@ -1,6 +1,7 @@
 using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
+using System.Linq; // For random selection
 using Dressing_game.Resources.Data;
 using Dressing_game.Resources.Models;
 
@@ -18,7 +19,19 @@ namespace Dressing_game
         {
             InitializeComponent();
             themes = ThemeData.GetThemes();
+            RandomizeTheme(); // Randomize the theme when the page loads
             LoadAllItems();  // Load all items from the themes
+        }
+
+        // Randomize the theme and update the label
+        private void RandomizeTheme()
+        {
+            Random random = new Random();
+            // Select a random theme from the list
+            Theme selectedTheme = themes[random.Next(themes.Count)];
+
+            // Update the ThemeLabel to display the selected theme's name
+            ThemeLabel.Text = $"Theme: {selectedTheme.Name}";
         }
 
         // Load all items into their respective categories
