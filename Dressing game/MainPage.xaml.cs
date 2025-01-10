@@ -8,7 +8,10 @@ namespace Dressing_game
 {
     public partial class MainPage : ContentPage
     {
-        private Button lastSelectedButton;
+        private Button lastSelectedTop;
+        private Button lastSelectedBottom;
+        private Button lastSelectedShoe;
+        private Button lastSelectedAccessory;
         private List<Theme> themes;
 
         public MainPage()
@@ -32,22 +35,21 @@ namespace Dressing_game
             {
                 foreach (var item in theme.RequiredItems)
                 {
-
                     // Categorize items dynamically based on their name
                     if (item == "Puffy Jacket" || item == "Tank Top" || item == "Leather Jacket") // Tops
-                        AddItemToCategory(TopsGrid, item);
+                        AddItemToCategory(TopsGrid, item, "top");
                     else if (item == "Jeans" || item == "Black Skirt" || item == "Shorts") // Bottoms
-                        AddItemToCategory(BottomsGrid, item);
+                        AddItemToCategory(BottomsGrid, item, "bottom");
                     else if (item == "Espadrils" || item == "Black High Heels" || item == "Boots") // Shoes
-                        AddItemToCategory(ShoesGrid, item);
+                        AddItemToCategory(ShoesGrid, item, "shoe");
                     else // Accessories
-                        AddItemToCategory(AccessoriesGrid, item);
+                        AddItemToCategory(AccessoriesGrid, item, "accessory");
                 }
             }
         }
 
         // Add item to a specific category
-        private void AddItemToCategory(Grid categoryGrid, string itemName)
+        private void AddItemToCategory(Grid categoryGrid, string itemName, string category)
         {
             int column = categoryGrid.Children.Count % 5; // Ensure 5 items per row
             int row = categoryGrid.Children.Count / 5;
@@ -58,7 +60,8 @@ namespace Dressing_game
                 BackgroundColor = Colors.RoyalBlue,
                 TextColor = Colors.White
             };
-            button.Clicked += OnItemClicked;
+
+            button.Clicked += (sender, e) => OnItemClicked(sender, e, category);
 
             // Set the row and column for the button
             categoryGrid.Children.Add(button);
@@ -66,20 +69,47 @@ namespace Dressing_game
             Grid.SetRow(button, row);
         }
 
-        private void OnItemClicked(object sender, EventArgs e)
+        // Handle item selection and ensure only one button per category is highlighted
+        private void OnItemClicked(object sender, EventArgs e, string category)
         {
             var selectedButton = sender as Button;
 
+            switch (category)
+            {
+                case "top":
+                    ResetSelection(ref lastSelectedTop);
+                    lastSelectedTop = selectedButton;
+                    break;
+
+                case "bottom":
+                    ResetSelection(ref lastSelectedBottom);
+                    lastSelectedBottom = selectedButton;
+                    break;
+
+                case "shoe":
+                    ResetSelection(ref lastSelectedShoe);
+                    lastSelectedShoe = selectedButton;
+                    break;
+
+                case "accessory":
+                    ResetSelection(ref lastSelectedAccessory);
+                    lastSelectedAccessory = selectedButton;
+                    break;
+            }
+
+            // Highlight the selected button
+            selectedButton.BackgroundColor = Colors.MediumVioletRed;
+            selectedButton.TextColor = Colors.White;
+        }
+
+        // Reset the background color of the previously selected button
+        private void ResetSelection(ref Button lastSelectedButton)
+        {
             if (lastSelectedButton != null)
             {
                 lastSelectedButton.BackgroundColor = Colors.RoyalBlue; // Reset previous selection
                 lastSelectedButton.TextColor = Colors.White;
             }
-
-            selectedButton.BackgroundColor = Colors.MediumVioletRed; // Highlight selected button
-            selectedButton.TextColor = Colors.White;
-
-            lastSelectedButton = selectedButton; // Track the current selection
         }
     }
 }
