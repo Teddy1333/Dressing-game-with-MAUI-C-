@@ -17,15 +17,21 @@ namespace Dressing_game.Resources.Data
         {
             new Theme
             {
-                Name = "Casual Fan Meet",
-                RequiredItems = new List<string> { "T-Shirt", "Jeans", "Sneakers" },
+                Name = "Winter",
+                RequiredItems = new List<string> { "Puffy Jacket", "Jeans", "Boots", "Winter Hat" },
                 PointsPerItem = 10
             },
             new Theme
             {
-                Name = "Stage Performance",
-                RequiredItems = new List<string> { "Glitter Top", "Leather Pants", "High Heels" },
+                Name = "Summer",
+                RequiredItems = new List<string> { "Tank Top", "Shorts", "Espadrils", "Sun Glasses" },
                 PointsPerItem = 15
+            },
+            new Theme
+            {
+                Name = "Rock Concert",
+                RequiredItems = new List<string> { "Leather Jacket", "Black Skirt", "Black High Heels", "Bass Guitar" },
+                PointsPerItem = 20
             }
         };
         }
