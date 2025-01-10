@@ -1,0 +1,52 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dressing_game.MainPage"
+             Title="Dressing Room">
+    <Grid ColumnDefinitions="*,2*" RowDefinitions="*">
+        <!-- Left Side: Character Preview -->
+        <VerticalStackLayout Grid.Column="0" Padding="10" Spacing="20">
+            <Label Text="Theme: Casual Fan Meet"
+                   x:Name="ThemeLabel"
+                   FontSize="20"
+                   HorizontalOptions="Center" />
+            <Frame HeightRequest="300" WidthRequest="200" BackgroundColor="#E5E5E5" VerticalOptions="Center">
+                <Label Text="Character Preview" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Frame>
+        </VerticalStackLayout>
+
+        <!-- Right Side: Wardrobe Categories -->
+        <ScrollView Grid.Column="1" Padding="10">
+            <VerticalStackLayout Spacing="20">
+                <!-- Tops -->
+                <Label Text="Tops" FontSize="16" />
+                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
+                    <Button Text="T-Shirt" Clicked="OnItemClicked" />
+                    <Button Text="Glitter Top" Clicked="OnItemClicked" />
+                </Grid>
+
+                <!-- Bottoms -->
+                <Label Text="Bottoms" FontSize="16" />
+                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
+                    <Button Text="Jeans" Clicked="OnItemClicked" />
+                    <Button Text="Leather Pants" Clicked="OnItemClicked" />
+                </Grid>
+
+                <!-- Shoes -->
+                <Label Text="Shoes" FontSize="16" />
+                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
+                    <Button Text="Sneakers" Clicked="OnItemClicked" />
+                    <Button Text="High Heels" Clicked="OnItemClicked" />
+                </Grid>
+
+                <!-- Accessories -->
+                <Label Text="Accessories" FontSize="16" />
+                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto">
+                    <Button Text="Bracelet" Clicked="OnItemClicked" />
+                    <Button Text="Necklace" Clicked="OnItemClicked" />
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
+
+    
