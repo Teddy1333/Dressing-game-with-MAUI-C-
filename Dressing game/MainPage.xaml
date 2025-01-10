@@ -44,6 +44,12 @@
                       RowSpacing="10" ColumnSpacing="10">
                     <!-- Add spacing between buttons -->
                 </Grid>
+
+                <!-- Navigate to ScorePage -->
+                <Button Text="Go to Score Page"
+                        BackgroundColor="RoyalBlue"
+                        TextColor="White"
+                        Clicked="OnGoToScorePageClicked" />
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

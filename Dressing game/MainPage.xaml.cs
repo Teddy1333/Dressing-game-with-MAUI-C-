@@ -1,7 +1,6 @@
 using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
-using System.Linq; // For random selection
 using Dressing_game.Resources.Data;
 using Dressing_game.Resources.Models;
 
@@ -123,6 +122,12 @@ namespace Dressing_game
                 lastSelectedButton.BackgroundColor = Colors.RoyalBlue; // Reset previous selection
                 lastSelectedButton.TextColor = Colors.White;
             }
+        }
+
+        // Navigate to the ScorePage when the button is clicked
+        private async void OnGoToScorePageClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ScorePage()); // Navigate to ScorePage
         }
     }
 }
