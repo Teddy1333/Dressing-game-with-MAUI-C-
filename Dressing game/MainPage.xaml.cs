@@ -12,58 +12,56 @@ namespace Dressing_game
         private Button lastSelectedBottom;
         private Button lastSelectedShoe;
         private Button lastSelectedAccessory;
+
         private List<Theme> themes;
+        private Theme selectedTheme;
+
+        private string selectedTop;
+        private string selectedBottom;
+        private string selectedShoe;
+        private string selectedAccessory;
 
         public MainPage()
         {
             InitializeComponent();
             themes = ThemeData.GetThemes();
-            RandomizeTheme(); // Randomize the theme when the page loads
-            LoadAllItems();  // Load all items from the themes
+            RandomizeTheme();
+            LoadAllItems();
         }
 
-        // Randomize the theme and update the label
         private void RandomizeTheme()
         {
             Random random = new Random();
-            // Select a random theme from the list
-            Theme selectedTheme = themes[random.Next(themes.Count)];
-
-            // Update the ThemeLabel to display the selected theme's name
+            selectedTheme = themes[random.Next(themes.Count)];
             ThemeLabel.Text = $"Theme: {selectedTheme.Name}";
         }
 
-        // Load all items into their respective categories
         private void LoadAllItems()
         {
-            // Clear existing wardrobe items in each category
             TopsGrid.Children.Clear();
             BottomsGrid.Children.Clear();
             ShoesGrid.Children.Clear();
             AccessoriesGrid.Children.Clear();
 
-            // Iterate through each theme and its items
             foreach (var theme in themes)
             {
                 foreach (var item in theme.RequiredItems)
                 {
-                    // Categorize items dynamically based on their name
-                    if (item == "Puffy Jacket" || item == "Tank Top" || item == "Leather Jacket") // Tops
+                    if (item == "Leather Jacket" || item == "Tank Top" || item == "Puffy Jacket")
                         AddItemToCategory(TopsGrid, item, "top");
-                    else if (item == "Jeans" || item == "Black Skirt" || item == "Shorts") // Bottoms
+                    else if (item == "Jeans" || item == "Shorts" || item == "Black Skirt")
                         AddItemToCategory(BottomsGrid, item, "bottom");
-                    else if (item == "Espadrils" || item == "Black High Heels" || item == "Boots") // Shoes
+                    else if (item == "Black High Heels" || item == "Espadrils" || item == "Boots")
                         AddItemToCategory(ShoesGrid, item, "shoe");
-                    else // Accessories
+                    else
                         AddItemToCategory(AccessoriesGrid, item, "accessory");
                 }
             }
         }
 
-        // Add item to a specific category
         private void AddItemToCategory(Grid categoryGrid, string itemName, string category)
         {
-            int column = categoryGrid.Children.Count % 5; // Ensure 5 items per row
+            int column = categoryGrid.Children.Count % 5;
             int row = categoryGrid.Children.Count / 5;
 
             var button = new Button
@@ -75,13 +73,11 @@ namespace Dressing_game
 
             button.Clicked += (sender, e) => OnItemClicked(sender, e, category);
 
-            // Set the row and column for the button
             categoryGrid.Children.Add(button);
             Grid.SetColumn(button, column);
             Grid.SetRow(button, row);
         }
 
-        // Handle item selection and ensure only one button per category is highlighted
         private void OnItemClicked(object sender, EventArgs e, string category)
         {
             var selectedButton = sender as Button;
@@ -91,43 +87,59 @@ namespace Dressing_game
                 case "top":
                     ResetSelection(ref lastSelectedTop);
                     lastSelectedTop = selectedButton;
+                    selectedTop = selectedButton.Text; // Store selected top
                     break;
 
                 case "bottom":
                     ResetSelection(ref lastSelectedBottom);
                     lastSelectedBottom = selectedButton;
+                    selectedBottom = selectedButton.Text; // Store selected bottom
                     break;
 
                 case "shoe":
                     ResetSelection(ref lastSelectedShoe);
                     lastSelectedShoe = selectedButton;
+                    selectedShoe = selectedButton.Text; // Store selected shoe
                     break;
 
                 case "accessory":
                     ResetSelection(ref lastSelectedAccessory);
                     lastSelectedAccessory = selectedButton;
+                    selectedAccessory = selectedButton.Text; // Store selected accessory
                     break;
             }
 
-            // Highlight the selected button
             selectedButton.BackgroundColor = Colors.MediumVioletRed;
             selectedButton.TextColor = Colors.White;
         }
 
-        // Reset the background color of the previously selected button
         private void ResetSelection(ref Button lastSelectedButton)
         {
             if (lastSelectedButton != null)
             {
-                lastSelectedButton.BackgroundColor = Colors.RoyalBlue; // Reset previous selection
+                lastSelectedButton.BackgroundColor = Colors.RoyalBlue;
                 lastSelectedButton.TextColor = Colors.White;
             }
         }
 
-        // Navigate to the ScorePage when the button is clicked
         private async void OnGoToScorePageClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ScorePage()); // Navigate to ScorePage
+            if (selectedTheme == null)
+            {
+                await DisplayAlert("Error", "No theme selected!", "OK");
+                return;
+            }
+
+            var selectedItems = new List<string>
+            {
+                selectedTop,
+                selectedBottom,
+                selectedShoe,
+                selectedAccessory
+            };
+
+            // Navigate to ScorePage with the selected items and theme
+            await Navigation.PushAsync(new ScorePage(selectedTheme, selectedItems));
         }
     }
 }

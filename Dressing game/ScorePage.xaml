@@ -3,10 +3,26 @@
              x:Class="Dressing_game.ScorePage"
              Title="Score">
     <VerticalStackLayout Padding="20" Spacing="20">
-        <Label Text="Your Score"
-               x:Name="ScoreLabel"
+
+        <!-- Theme Label (Displays the selected theme name) -->
+        <Label x:Name="ThemeLabel"
+               Text="Theme: "
+               FontSize="20"
+               HorizontalOptions="Center" />
+
+        <!-- Selected Items Label (Displays the selected items) -->
+        <Label x:Name="SelectedItemsLabel"
+               Text="Selected Items: "
+               FontSize="16"
+               HorizontalOptions="Center" />
+
+        <!-- Your Score Label -->
+        <Label x:Name="ScoreLabel"
+               Text="Your Score"
                FontSize="24"
                HorizontalOptions="Center" />
+
+        <!-- Button to Calculate the Score -->
         <Button Text="Calculate Score"
                 BackgroundColor="RoyalBlue"
                 TextColor="White"

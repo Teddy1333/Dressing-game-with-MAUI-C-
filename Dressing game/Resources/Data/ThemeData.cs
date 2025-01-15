@@ -7,8 +7,6 @@ using Dressing_game.Resources.Models;
 
 namespace Dressing_game.Resources.Data
 {
-    
-
     public static class ThemeData
     {
         public static List<Theme> GetThemes()
