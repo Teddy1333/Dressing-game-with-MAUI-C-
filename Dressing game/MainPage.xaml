@@ -6,13 +6,47 @@
         <!-- Left Side: Character Preview -->
         <VerticalStackLayout Grid.Column="0" Padding="10" Spacing="20">
             <Label Text="Theme: Casual Fan Meet"
-                   x:Name="ThemeLabel"
-                   FontSize="20"
-                   HorizontalOptions="Center" />
-            <Frame HeightRequest="300" WidthRequest="200" BackgroundColor="#E5E5E5" VerticalOptions="Center">
-                <Label Text="Character Preview" HorizontalOptions="Center" VerticalOptions="Center" />
+           x:Name="ThemeLabel"
+           FontSize="20"
+           HorizontalOptions="Center" />
+
+            <Frame HeightRequest="400" WidthRequest="300" BackgroundColor="#E5E5E5" VerticalOptions="Center">
+                <!-- Character with Clothing Layers -->
+                <Grid>
+                    <!-- Base Character Image -->
+                    <Image x:Name="CharacterBase"
+                   Source="character.png"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />   
+
+                    <!-- Bottom Layer -->
+                    <Image x:Name="BottomLayer"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+                    <!-- Top Layer -->
+                    <Image x:Name="TopLayer"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+
+                    <!-- Shoe Layer -->
+                    <Image x:Name="ShoeLayer"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+
+                    <!-- Accessory Layer -->
+                    <Image x:Name="AccessoryLayer"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+                </Grid>
             </Frame>
         </VerticalStackLayout>
+
 
         <!-- Right Side: Wardrobe Categories -->
         <ScrollView Grid.Column="1" Padding="10">

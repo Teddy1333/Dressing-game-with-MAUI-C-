@@ -47,11 +47,11 @@ namespace Dressing_game
             {
                 foreach (var item in theme.RequiredItems)
                 {
-                    if (item == "Leather Jacket" || item == "Tank Top" || item == "Puffy Jacket")
+                    if (item == "Leather Top" || item == "Tank Top" || item == "Sweater")
                         AddItemToCategory(TopsGrid, item, "top");
                     else if (item == "Jeans" || item == "Shorts" || item == "Black Skirt")
                         AddItemToCategory(BottomsGrid, item, "bottom");
-                    else if (item == "Black High Heels" || item == "Espadrils" || item == "Boots")
+                    else if (item == "Black High Heels" || item == "Espadrils" || item == "Ice Skates")
                         AddItemToCategory(ShoesGrid, item, "shoe");
                     else
                         AddItemToCategory(AccessoriesGrid, item, "accessory");
@@ -88,30 +88,47 @@ namespace Dressing_game
                     ResetSelection(ref lastSelectedTop);
                     lastSelectedTop = selectedButton;
                     selectedTop = selectedButton.Text; // Store selected top
+
+                    // Update TopLayer image
+                    TopLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
+                    TopLayer.IsVisible = true;
                     break;
 
                 case "bottom":
                     ResetSelection(ref lastSelectedBottom);
                     lastSelectedBottom = selectedButton;
                     selectedBottom = selectedButton.Text; // Store selected bottom
+
+                    // Update BottomLayer image
+                    BottomLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
+                    BottomLayer.IsVisible = true;
                     break;
 
                 case "shoe":
                     ResetSelection(ref lastSelectedShoe);
                     lastSelectedShoe = selectedButton;
                     selectedShoe = selectedButton.Text; // Store selected shoe
+
+                    // Update ShoeLayer image
+                    ShoeLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
+                    ShoeLayer.IsVisible = true;
                     break;
 
                 case "accessory":
                     ResetSelection(ref lastSelectedAccessory);
                     lastSelectedAccessory = selectedButton;
                     selectedAccessory = selectedButton.Text; // Store selected accessory
+
+                    // Update AccessoryLayer image
+                    AccessoryLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
+                    AccessoryLayer.IsVisible = true;
                     break;
             }
 
             selectedButton.BackgroundColor = Colors.MediumVioletRed;
             selectedButton.TextColor = Colors.White;
         }
+
 
         private void ResetSelection(ref Button lastSelectedButton)
         {

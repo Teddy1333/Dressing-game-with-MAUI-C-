@@ -16,20 +16,20 @@ namespace Dressing_game.Resources.Data
             new Theme
             {
                 Name = "Winter",
-                RequiredItems = new List<string> { "Puffy Jacket", "Jeans", "Boots", "Winter Hat" },
+                RequiredItems = new List<string> { "Sweater", "Jeans", "Ice Skates", "Puffy Jacket" },
                 PointsPerItem = 10
             },
             new Theme
             {
                 Name = "Summer",
                 RequiredItems = new List<string> { "Tank Top", "Shorts", "Espadrils", "Sun Glasses" },
-                PointsPerItem = 15
+                PointsPerItem = 10
             },
             new Theme
             {
                 Name = "Rock Concert",
-                RequiredItems = new List<string> { "Leather Jacket", "Black Skirt", "Black High Heels", "Bass Guitar" },
-                PointsPerItem = 20
+                RequiredItems = new List<string> { "Leather Top", "Black Skirt", "Black High Heels", "Hand Bag" },
+                PointsPerItem = 10
             }
         };
         }
