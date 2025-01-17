@@ -24,10 +24,31 @@
 
         <!-- Button to Calculate the Score -->
         <Button Text="Calculate Score"
-                BackgroundColor="RoyalBlue"
+                BackgroundColor="#D81B60"
                 TextColor="White"
+                FontSize="18"
+                Grid.Row="1" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                WidthRequest="200"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="Center"
                 Clicked="OnCalculateScoreClicked" />
 
+        <Button Text="Play Again"
+                BackgroundColor="#D81B60"
+                TextColor="White"
+                FontSize="18"
+                Grid.Row="1" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                WidthRequest="200"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="Center"
+                 />
+        
         <Button Text="Exit"
                 BackgroundColor="#D81B60"
                 TextColor="White"
@@ -35,10 +56,12 @@
                 Grid.Row="1" 
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                WidthRequest="150"
+                WidthRequest="200"
                 HeightRequest="50"
                 CornerRadius="25"
                 HorizontalOptions="Center"
                 Clicked="OnExitClicked" />
+        
+        
     </VerticalStackLayout>
 </ContentPage>

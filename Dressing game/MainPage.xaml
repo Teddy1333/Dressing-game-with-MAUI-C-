@@ -1,7 +1,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Dressing_game.MainPage"
-             Title="Dressing Room">
+             Title="Dressing Room"
+             BackgroundColor="#FDF0F5" >
     <Grid ColumnDefinitions="*,2*" RowDefinitions="*">
         <!-- Left Side: Character Preview -->
         <VerticalStackLayout Grid.Column="0" Padding="10" Spacing="20">
@@ -18,7 +19,7 @@
                    Source="character.png"
                    Aspect="AspectFit"
                    HorizontalOptions="Center"
-                   VerticalOptions="Center" />   
+                   VerticalOptions="Center" />
 
                     <!-- Bottom Layer -->
                     <Image x:Name="BottomLayer"
@@ -81,8 +82,14 @@
 
                 <!-- Navigate to ScorePage -->
                 <Button Text="Go to Score Page"
-                        BackgroundColor="RoyalBlue"
+                        BackgroundColor="#D81B60"
                         TextColor="White"
+                        FontSize="18"
+                        WidthRequest="500"
+                        HeightRequest="50"
+                        CornerRadius="25"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
                         Clicked="OnGoToScorePageClicked" />
             </VerticalStackLayout>
         </ScrollView>

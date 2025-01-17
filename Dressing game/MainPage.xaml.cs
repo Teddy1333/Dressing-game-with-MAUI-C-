@@ -122,7 +122,7 @@ namespace Dressing_game
                     break;
             }
 
-            selectedButton.BackgroundColor = Colors.MediumVioletRed;
+            selectedButton.BackgroundColor = Colors.HotPink;
             selectedButton.TextColor = Colors.White;
         }
 
