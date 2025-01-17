@@ -21,8 +21,8 @@ namespace Dressing_game.Resources.Data
                     {
                         WinterItems.Sweater,
                         WinterItems.Jeans,
-                        WinterItems.IceSkates,
-                        WinterItems.PuffyJacket
+                        WinterItems.Skates,
+                        WinterItems.Jacket
                     },
                     PointsPerItem = 10
                 },
@@ -31,10 +31,10 @@ namespace Dressing_game.Resources.Data
                     Name = "Summer",
                     RequiredItems = new List<Enum>
                     {
-                        SummerItems.TankTop,
+                        SummerItems.Shirt,
                         SummerItems.Shorts,
                         SummerItems.Espadrils,
-                        SummerItems.SunGlasses
+                        SummerItems.Glasses
                     },
                     PointsPerItem = 10
                 },
@@ -43,10 +43,10 @@ namespace Dressing_game.Resources.Data
                     Name = "Rock Concert",
                     RequiredItems = new List<Enum>
                     {
-                        RockConcertItems.LeatherTop,
-                        RockConcertItems.BlackSkirt,
-                        RockConcertItems.BlackHighHeels,
-                        RockConcertItems.HandBag
+                        RockConcertItems.Cutoff,
+                        RockConcertItems.Skirt,
+                        RockConcertItems.Heels,
+                        RockConcertItems.Handbag
                     },
                     PointsPerItem = 10
                 }

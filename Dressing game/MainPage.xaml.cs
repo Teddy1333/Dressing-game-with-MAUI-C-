@@ -47,16 +47,17 @@ namespace Dressing_game
             {
                 foreach (var item in theme.RequiredItems)
                 {
-                    if (item == "Leather Top" || item == "Tank Top" || item == "Sweater")
-                        AddItemToCategory(TopsGrid, item, "top");
-                    else if (item == "Jeans" || item == "Shorts" || item == "Black Skirt")
-                        AddItemToCategory(BottomsGrid, item, "bottom");
-                    else if (item == "Black High Heels" || item == "Espadrils" || item == "Ice Skates")
-                        AddItemToCategory(ShoesGrid, item, "shoe");
+                    if (item.ToString() == "Cutoff" || item.ToString() == "Shirt" || item.ToString() == "Sweater")
+                        AddItemToCategory(TopsGrid, item.ToString(), "top");
+                    else if (item.ToString() == "Jeans" || item.ToString() == "Shorts" || item.ToString() == "Skirt")
+                        AddItemToCategory(BottomsGrid, item.ToString(), "bottom");
+                    else if (item.ToString() == "Heels" || item.ToString() == "Espadrils" || item.ToString() == "Skates")
+                        AddItemToCategory(ShoesGrid, item.ToString(), "shoe");
                     else
-                        AddItemToCategory(AccessoriesGrid, item, "accessory");
+                        AddItemToCategory(AccessoriesGrid, item.ToString(), "accessory");
                 }
             }
+
         }
 
         private void AddItemToCategory(Grid categoryGrid, string itemName, string category)

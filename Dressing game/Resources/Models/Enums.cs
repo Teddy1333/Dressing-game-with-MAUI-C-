@@ -12,24 +12,24 @@ namespace Dressing_game.Resources.Models
         {
             Sweater,
             Jeans,
-            IceSkates,
-            PuffyJacket
+            Skates,
+            Jacket
         }
 
         public enum SummerItems
         {
-            TankTop,
+            Shirt,
             Shorts,
             Espadrils,
-            SunGlasses
+            Glasses
         }
 
         public enum RockConcertItems
         {
-            LeatherTop,
-            BlackSkirt,
-            BlackHighHeels,
-            HandBag
+            Cutoff,
+            Skirt,
+            Heels,
+            Handbag
         }
     }
 }

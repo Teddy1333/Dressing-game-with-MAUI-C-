@@ -1,6 +1,7 @@
 using Microsoft.Maui.Controls;
 using Dressing_game.Resources.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Dressing_game
 {
@@ -59,7 +60,7 @@ namespace Dressing_game
 
             foreach (var item in selectedItems)
             {
-                if (theme.RequiredItems.Contains(item))
+                if (theme.RequiredItems.Any(enumItem => enumItem.ToString() == item))
                 {
                     score += theme.PointsPerItem;
                 }
@@ -67,5 +68,6 @@ namespace Dressing_game
 
             return score;
         }
+
     }
 }
