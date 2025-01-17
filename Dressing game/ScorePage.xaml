@@ -27,5 +27,18 @@
                 BackgroundColor="RoyalBlue"
                 TextColor="White"
                 Clicked="OnCalculateScoreClicked" />
+
+        <Button Text="Exit"
+                BackgroundColor="#D81B60"
+                TextColor="White"
+                FontSize="18"
+                Grid.Row="1" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                WidthRequest="150"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="Center"
+                Clicked="OnExitClicked" />
     </VerticalStackLayout>
 </ContentPage>

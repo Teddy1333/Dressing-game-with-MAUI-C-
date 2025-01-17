@@ -52,5 +52,10 @@ namespace Dressing_game
 
             DisplayAlert("Score Saved", "Your score has been saved successfully!", "OK");
         }
+
+        private void OnExitClicked(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+        }
     }
 }

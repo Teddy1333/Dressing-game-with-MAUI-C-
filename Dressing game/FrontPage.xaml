@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dressing_game.FrontPage"
+             Title="DressUp Game"
+             BackgroundColor="#FDF0F5">
+
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,*">
+
+        <Image Source="logo.png"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               WidthRequest="300"
+               HeightRequest="200" />
+
+        <!-- Buttons -->
+        <Button Text="Play"
+                BackgroundColor="#D81B60"
+                TextColor="White"
+                FontSize="18"
+                Grid.Row="2"
+                Grid.Column="0"
+                WidthRequest="150"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="Center"
+                Clicked="OnPlayClicked" />
+
+        <Button Text="How to Play"
+                BackgroundColor="#D81B60"
+                TextColor="White"
+                FontSize="18"
+                Grid.Row="2"
+                Grid.Column="1"
+                WidthRequest="150"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="Center"
+                Clicked="OnHowToPlayClicked" />
+
+        <Button Text="Exit"
+                BackgroundColor="#D81B60"
+                TextColor="White"
+                FontSize="18"
+                Grid.Row="2" 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                WidthRequest="150"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="Center"
+                Clicked="OnExitClicked" />
+        <Image Source="border.png"  
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Start" 
+                WidthRequest="200"
+                HeightRequest="200" />
+        <Image Source="border.png"
+                Grid.Row="2"  
+               HorizontalOptions="Start"
+                VerticalOptions="End"
+                WidthRequest="200"
+                HeightRequest="200"
+                Rotation="180" />
+
+
+    </Grid>
+</ContentPage>
