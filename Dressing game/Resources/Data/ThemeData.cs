@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dressing_game.Resources.Models;
 using static Dressing_game.Resources.Models.Enums;
 
@@ -10,11 +7,11 @@ namespace Dressing_game.Resources.Data
 {
     public static class ThemeData
     {
-        public static List<Theme> GetThemes()
+        public static List<Themes> GetThemes()
         {
-            return new List<Theme>
+            return new List<Themes>
             {
-                new Theme
+                new Themes
                 {
                     Name = "Winter",
                     RequiredItems = new List<Enum>
@@ -26,7 +23,7 @@ namespace Dressing_game.Resources.Data
                     },
                     PointsPerItem = 10
                 },
-                new Theme
+                new Themes
                 {
                     Name = "Summer",
                     RequiredItems = new List<Enum>
@@ -38,7 +35,7 @@ namespace Dressing_game.Resources.Data
                     },
                     PointsPerItem = 10
                 },
-                new Theme
+                new Themes
                 {
                     Name = "Rock Concert",
                     RequiredItems = new List<Enum>
@@ -53,5 +50,4 @@ namespace Dressing_game.Resources.Data
             };
         }
     }
-
 }

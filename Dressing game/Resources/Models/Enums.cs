@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Dressing_game.Resources.Models
 {
-    internal class Enums
+    public enum ItemType
+    {
+        Top,
+        Bottom,
+        Shoe,
+        Accessory
+    }
+
+    public class Enums
     {
         public enum WinterItems
         {
@@ -33,3 +41,4 @@ namespace Dressing_game.Resources.Models
         }
     }
 }
+

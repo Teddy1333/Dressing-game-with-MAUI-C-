@@ -13,8 +13,8 @@ namespace Dressing_game
         private Button lastSelectedShoe;
         private Button lastSelectedAccessory;
 
-        private List<Theme> themes;
-        private Theme selectedTheme;
+        private List<Themes> themes;
+        private Themes selectedTheme;
 
         private string selectedTop;
         private string selectedBottom;
@@ -88,9 +88,8 @@ namespace Dressing_game
                 case "top":
                     ResetSelection(ref lastSelectedTop);
                     lastSelectedTop = selectedButton;
-                    selectedTop = selectedButton.Text; // Store selected top
+                    selectedTop = selectedButton.Text;
 
-                    // Update TopLayer image
                     TopLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
                     TopLayer.IsVisible = true;
                     break;
@@ -98,9 +97,8 @@ namespace Dressing_game
                 case "bottom":
                     ResetSelection(ref lastSelectedBottom);
                     lastSelectedBottom = selectedButton;
-                    selectedBottom = selectedButton.Text; // Store selected bottom
+                    selectedBottom = selectedButton.Text;
 
-                    // Update BottomLayer image
                     BottomLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
                     BottomLayer.IsVisible = true;
                     break;
@@ -108,9 +106,8 @@ namespace Dressing_game
                 case "shoe":
                     ResetSelection(ref lastSelectedShoe);
                     lastSelectedShoe = selectedButton;
-                    selectedShoe = selectedButton.Text; // Store selected shoe
+                    selectedShoe = selectedButton.Text;
 
-                    // Update ShoeLayer image
                     ShoeLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
                     ShoeLayer.IsVisible = true;
                     break;
@@ -118,9 +115,8 @@ namespace Dressing_game
                 case "accessory":
                     ResetSelection(ref lastSelectedAccessory);
                     lastSelectedAccessory = selectedButton;
-                    selectedAccessory = selectedButton.Text; // Store selected accessory
+                    selectedAccessory = selectedButton.Text;
 
-                    // Update AccessoryLayer image
                     AccessoryLayer.Source = $"{selectedButton.Text.Replace(" ", "_").ToLower()}.png";
                     AccessoryLayer.IsVisible = true;
                     break;
@@ -156,7 +152,6 @@ namespace Dressing_game
                 selectedAccessory
             };
 
-            // Navigate to ScorePage with the selected items and theme
             await Navigation.PushAsync(new ScorePage(selectedTheme, selectedItems));
         }
     }
