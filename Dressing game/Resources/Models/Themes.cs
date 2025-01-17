@@ -9,7 +9,7 @@ namespace Dressing_game.Resources.Models
     public class Theme
     {
         public string Name { get; set; }
-        public List<string> RequiredItems { get; set; }
+        public List<Enum> RequiredItems { get; set; }
         public int PointsPerItem { get; set; }
     }
 
