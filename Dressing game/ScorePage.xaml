@@ -1,7 +1,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Dressing_game.ScorePage"
-             Title="Score">
+             Title="Score"
+             BackgroundColor="#FDF0F5" >
     <VerticalStackLayout Padding="20" Spacing="20">
 
         <!-- Theme Label (Displays the selected theme name) -->
@@ -24,7 +25,7 @@
 
         <!-- Button to Calculate the Score -->
         <Button Text="Calculate Score"
-                BackgroundColor="#D81B60"
+                BackgroundColor="MediumVioletRed"
                 TextColor="White"
                 FontSize="18"
                 Grid.Row="1" 
@@ -36,21 +37,8 @@
                 HorizontalOptions="Center"
                 Clicked="OnCalculateScoreClicked" />
 
-        <Button Text="Play Again"
-                BackgroundColor="#D81B60"
-                TextColor="White"
-                FontSize="18"
-                Grid.Row="1" 
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                WidthRequest="200"
-                HeightRequest="50"
-                CornerRadius="25"
-                HorizontalOptions="Center"
-                 />
-        
         <Button Text="Exit"
-                BackgroundColor="#D81B60"
+                BackgroundColor="MediumVioletRed"
                 TextColor="White"
                 FontSize="18"
                 Grid.Row="1" 

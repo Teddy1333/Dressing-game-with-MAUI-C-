@@ -78,7 +78,7 @@ namespace Dressing_game
             Grid.SetColumn(button, column);
             Grid.SetRow(button, row);
         }
-
+        
         private void OnItemClicked(object sender, EventArgs e, string category)
         {
             var selectedButton = sender as Button;
@@ -122,7 +122,7 @@ namespace Dressing_game
                     break;
             }
 
-            selectedButton.BackgroundColor = Colors.HotPink;
+            selectedButton.BackgroundColor = Colors.MediumVioletRed;
             selectedButton.TextColor = Colors.White;
         }
 

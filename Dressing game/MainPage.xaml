@@ -11,7 +11,7 @@
            FontSize="20"
            HorizontalOptions="Center" />
 
-            <Frame HeightRequest="400" WidthRequest="300" BackgroundColor="#E5E5E5" VerticalOptions="Center">
+            <Frame HeightRequest="400" WidthRequest="300" BackgroundColor="#FFCCCC" VerticalOptions="Center">
                 <!-- Character with Clothing Layers -->
                 <Grid>
                     <!-- Base Character Image -->
@@ -82,7 +82,7 @@
 
                 <!-- Navigate to ScorePage -->
                 <Button Text="Go to Score Page"
-                        BackgroundColor="#D81B60"
+                        BackgroundColor="MediumVioletRed"
                         TextColor="White"
                         FontSize="18"
                         WidthRequest="500"

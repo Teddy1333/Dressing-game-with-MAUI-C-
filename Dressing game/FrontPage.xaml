@@ -18,7 +18,7 @@
 
         <!-- Buttons -->
         <Button Text="Play"
-                BackgroundColor="#D81B60"
+                BackgroundColor="MediumVioletRed"
                 TextColor="White"
                 FontSize="18"
                 Grid.Row="2"
@@ -30,7 +30,7 @@
                 Clicked="OnPlayClicked" />
 
         <Button Text="How to Play"
-                BackgroundColor="#D81B60"
+                BackgroundColor="MediumVioletRed"
                 TextColor="White"
                 FontSize="18"
                 Grid.Row="2"
@@ -42,7 +42,7 @@
                 Clicked="OnHowToPlayClicked" />
 
         <Button Text="Exit"
-                BackgroundColor="#D81B60"
+                BackgroundColor="MediumVioletRed"
                 TextColor="White"
                 FontSize="18"
                 Grid.Row="2" 

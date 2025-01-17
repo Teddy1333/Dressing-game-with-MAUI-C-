@@ -23,7 +23,7 @@ namespace Dressing_game
             SelectedItemsLabel.Text = $"Selected Items: {string.Join(", ", SelectedItems)}";
         }
 
-        private void OnCalculateScoreClicked(object sender, EventArgs e)
+        private async void OnCalculateScoreClicked(object sender, EventArgs e)
         {
             if (CurrentTheme == null)
             {
@@ -51,6 +51,11 @@ namespace Dressing_game
             scoreRepository.SaveScore(score);
 
             DisplayAlert("Score Saved", "Your score has been saved successfully!", "OK");
+
+            if (score == maxScore)
+            {
+                await Navigation.PushAsync(new GameCompletedPage());
+            }
         }
 
         private void OnExitClicked(object sender, EventArgs e)

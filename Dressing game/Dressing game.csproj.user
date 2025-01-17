@@ -9,6 +9,9 @@
     <MauiXaml Update="FrontPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="GameCompletedPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ScorePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
